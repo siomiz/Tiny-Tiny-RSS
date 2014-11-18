@@ -4,6 +4,8 @@ set -e
 : ${POSTGRES_PORT_5432_TCP_ADDR:?"--link to a PostgreSQL container is not set"}
 : ${SELF_URL_PATH:?"-e SELF_URL_PATH is not set"}
 
+sed -ri 's#SELF_URL_PATH#'"${SELF_URL_PATH}"'#;' /etc/nginx/sites-available/default
+
 sed -ri 's/;opcache.enable=0/opcache.enable=1/;' /etc/php5/fpm/php.ini
 sed -ri 's/;opcache.enable_cli=0/opcache.enable_cli=1/;' /etc/php5/fpm/php.ini
 sed -ri 's/;opcache.memory_consumption=64/opcache.memory_consumption=128/;' /etc/php5/fpm/php.ini

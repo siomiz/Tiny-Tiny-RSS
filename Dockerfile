@@ -25,7 +25,7 @@ WORKDIR /opt/Tiny-Tiny-RSS
 RUN git checkout ${TTRSS_VERSION_TAG}
 
 RUN apt-get remove --purge -y git-core \
-	&& apt-get autoremove -y --purge \
+	&& DEBIAN_FRONTEND=noninteractive apt-get autoremove --purge -y \
 	&& apt-get clean
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
