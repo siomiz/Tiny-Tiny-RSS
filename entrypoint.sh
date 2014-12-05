@@ -12,7 +12,7 @@ sed -ri 's/;opcache.memory_consumption=64/opcache.memory_consumption=128/;' /etc
 sed -ri 's/;opcache.max_accelerated_files=2000/opcache.max_accelerated_files=4000/;' /etc/php5/fpm/php.ini
 sed -ri 's/;opcache.revalidate_freq=2/opcache.revalidate_freq=60/;' /etc/php5/fpm/php.ini
 
-sed -ri 's/"localhost"/"'"${POSTGRES_PORT_5432_TCP_ADDR}"'"/;' config.php
+sed -ri 's/"localhost"/getenv("POSTGRES_PORT_5432_TCP_ADDR")/;' config.php
 sed -ri 's/"fox"/"tt_rss"/;' config.php
 sed -ri 's/"XXXXXX"/""/;' config.php
 
