@@ -16,7 +16,7 @@ RUN apt-get update \
 	postgresql \
 	supervisor
 
-ENV TTRSS_VERSION_TAG 1.14
+ENV TTRSS_VERSION_TAG 1.15.3
 
 RUN git clone https://github.com/gothfox/Tiny-Tiny-RSS.git /opt/Tiny-Tiny-RSS
 
