@@ -16,13 +16,13 @@ RUN apt-get update \
 	postgresql \
 	supervisor
 
-ENV TTRSS_VERSION_TAG 1.15.3
+ENV TTRSS_VERSION master
 
 RUN git clone https://github.com/gothfox/Tiny-Tiny-RSS.git /opt/Tiny-Tiny-RSS
 
 WORKDIR /opt/Tiny-Tiny-RSS
 
-RUN git checkout ${TTRSS_VERSION_TAG}
+RUN git checkout ${TTRSS_VERSION}
 
 RUN apt-get remove --purge -y git-core \
 	&& DEBIAN_FRONTEND=noninteractive apt-get autoremove --purge -y \
