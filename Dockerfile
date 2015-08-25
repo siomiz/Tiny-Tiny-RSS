@@ -18,7 +18,7 @@ RUN apt-get update \
 
 ENV TTRSS_VERSION master
 
-RUN git clone https://tt-rss.org/gitlab/fox/tt-rss.git /opt/Tiny-Tiny-RSS
+RUN git clone --depth 1 https://tt-rss.org/gitlab/fox/tt-rss.git /opt/Tiny-Tiny-RSS
 
 WORKDIR /opt/Tiny-Tiny-RSS
 
