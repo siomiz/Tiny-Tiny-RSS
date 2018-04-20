@@ -24,6 +24,7 @@ server {
                         }
 
                         fastcgi_param REQUEST_URI $self_url_path$request_uri;
+                        fastcgi_param X-Forwarded-Proto $scheme;
                 }
 
                 location ~* \.(?:jpg|jpeg|gif|bmp|ico|png|css|js|swf)$ {
